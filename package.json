@@ -23,7 +23,7 @@
     "node": ">=18.0.0",
     "npm": ">=9.0.0"
   },
-  "homepage": "https://mhmd-ebrahim-1.github.io/Mohamed-Ebrahim-Hamed---Portfolio",
+  "homepage": "https://mhmd-ebrahim-1.github.io/My_Portfolio",
   "type": "module",
   "scripts": {
     "dev": "vite",
