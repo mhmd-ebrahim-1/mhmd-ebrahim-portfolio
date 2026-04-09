@@ -1,12 +1,12 @@
 # Mohamed Ebrahim Portfolio
 
-Personal portfolio built with React, Vite, Tailwind CSS, Framer Motion, and React Router.
+Personal portfolio website built with React, Vite, Tailwind CSS, Framer Motion, and React Router.
 
 ## Live Website
 
-- GitHub Pages: https://mhmd-ebrahim-1.github.io/Mohamed-Ebrahim-Hamed---Portfolio
+- https://mhmd-ebrahim-1.github.io/Mohamed-Ebrahim-Hamed---Portfolio
 
-## Tech Stack
+## Stack
 
 - React 18
 - Vite 5
@@ -15,63 +15,56 @@ Personal portfolio built with React, Vite, Tailwind CSS, Framer Motion, and Reac
 - React Router DOM
 - Lucide React
 
-## Project Structure
-
-- `src/` application source code
-- `src/pages/` main pages (Home, About, Projects, CV, Certificates)
-- `src/components/` reusable UI components
-- `src/data/index.js` all profile/project/certificate content
-- `public/profile.jpg` profile image used in Home and CV pages
-- `public/cv.pdf` downloadable CV
-
-## Local Development
+## Quick Start
 
 1. Install dependencies:
 
-   npm install
+```bash
+npm install
+```
 
 2. Start development server:
 
-   npm run dev
+```bash
+npm run dev
+```
 
-3. Open:
+3. Open in browser:
 
-   http://localhost:5173/
+- http://localhost:5173/
 
-## Build
+## Scripts
 
-Create production build:
-
-npm run build
-
-Preview production build:
-
-npm run preview
+```bash
+npm run dev       # start dev server
+npm run build     # production build
+npm run preview   # preview production build
+npm run deploy    # build + publish to gh-pages
+```
 
 ## Deploy to GitHub Pages
 
-This project is configured for GitHub Pages with:
+This project is already configured for GitHub Pages through:
 
-- `homepage` in `package.json`
-- `base` in `vite.config.js`
-- deploy script using `gh-pages`
+- homepage in package.json
+- base in vite.config.js
+- gh-pages deploy script
 
-Deploy steps:
+To deploy latest version:
 
-1. Commit your latest changes.
-2. Run:
+```bash
+npm run deploy
+```
 
-   npm run deploy
+## Main Files
 
-This publishes the `dist` folder to the `gh-pages` branch.
-
-## Content Editing
-
-- Main profile/project content: `src/data/index.js`
-- Hero intro text: `src/pages/Home.jsx`
-- CV button behavior and CV page: `src/pages/CV.jsx`
+- src/data/index.js: profile, projects, certificates, experience data
+- src/pages/Home.jsx: hero section and homepage content
+- src/pages/CV.jsx: CV page and download/open behavior
+- public/profile.jpg: profile image shown in the site
+- public/cv.pdf: downloadable CV file
 
 ## Notes
 
-- Keep `public/profile.jpg` updated with your preferred photo.
-- Keep `public/cv.pdf` updated with your latest CV.
+- Update public/profile.jpg when you want to change your profile photo.
+- Update public/cv.pdf when you have a newer CV version.

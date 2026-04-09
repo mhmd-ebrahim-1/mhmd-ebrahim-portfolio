@@ -2,6 +2,27 @@
   "name": "mohamed-ebrahim-portfolio",
   "private": true,
   "version": "1.0.0",
+  "description": "Personal portfolio website for Mohamed Ebrahim built with React, Vite, Tailwind, and Framer Motion.",
+  "author": "Mohamed Ebrahim",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/mhmd-ebrahim-1/Mohamed-Ebrahim-Hamed---Portfolio.git"
+  },
+  "bugs": {
+    "url": "https://github.com/mhmd-ebrahim-1/Mohamed-Ebrahim-Hamed---Portfolio/issues"
+  },
+  "keywords": [
+    "portfolio",
+    "react",
+    "vite",
+    "tailwind",
+    "framer-motion"
+  ],
+  "engines": {
+    "node": ">=18.0.0",
+    "npm": ">=9.0.0"
+  },
   "homepage": "https://mhmd-ebrahim-1.github.io/Mohamed-Ebrahim-Hamed---Portfolio",
   "type": "module",
   "scripts": {
