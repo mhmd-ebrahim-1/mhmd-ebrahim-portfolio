@@ -1,19 +1,22 @@
 {
   "name": "mohamed-ebrahim-portfolio",
   "private": true,
-  "version": "1.0.0",
-  "description": "Personal portfolio website for Mohamed Ebrahim built with React, Vite, Tailwind, and Framer Motion.",
+  "version": "1.1.0",
+  "description": "Personal portfolio website for Mohamed Ebrahim — Data Analyst & ML Engineer.",
   "author": "Mohamed Ebrahim",
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "https://github.com/mhmd-ebrahim-1/Mohamed-Ebrahim-Hamed---Portfolio.git"
+    "url": "https://github.com/mhmd-ebrahim-1/My_Portfolio.git"
   },
   "bugs": {
-    "url": "https://github.com/mhmd-ebrahim-1/Mohamed-Ebrahim-Hamed---Portfolio/issues"
+    "url": "https://github.com/mhmd-ebrahim-1/My_Portfolio/issues"
   },
   "keywords": [
     "portfolio",
+    "data-analyst",
+    "machine-learning",
+    "ai",
     "react",
     "vite",
     "tailwind",
@@ -43,8 +46,9 @@
     "@vitejs/plugin-react": "^4.2.0",
     "tailwindcss": "^3.4.0",
     "autoprefixer": "^10.4.0",
-    "gh-pages": "^6.1.1",
+    "autoprefixer": "^10.4.0",
     "postcss": "^8.4.0",
-    "vite": "^5.1.0"
+    "vite": "^5.1.0",
+    "gh-pages": "^6.1.1"
   }
 }
