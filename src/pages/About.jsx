@@ -2,6 +2,8 @@ import { motion } from 'framer-motion'
 import { useReveal } from '../hooks'
 import { PROFILE, SKILLS, TOOLS } from '../data'
 
+const BASE_URL = import.meta.env.BASE_URL
+
 function proficiency(level) {
   if (level >= 90) return 'Advanced'
   if (level >= 80) return 'Strong'
@@ -49,6 +51,14 @@ export default function About() {
           </motion.div>
 
           <motion.div initial={{ opacity: 0, x: 30 }} animate={heroVisible ? { opacity: 1, x: 0 } : {}} transition={{ duration: 0.7, ease: [0.16, 1, 0.3, 1], delay: 0.1 }} className="relative">
+            <div className="grid grid-cols-5 gap-3 mb-4">
+              <a href={`${BASE_URL}personal-outdoor.svg`} target="_blank" rel="noreferrer" className="col-span-3 block rounded-2xl overflow-hidden group" style={{ border: '1px solid rgba(255,255,255,0.08)' }}>
+                <img src={`${BASE_URL}personal-outdoor.svg`} alt="Mohamed Ebrahim outdoors" className="w-full h-72 sm:h-80 object-cover transition-transform duration-500 group-hover:scale-[1.02]" loading="lazy" />
+              </a>
+              <a href={`${BASE_URL}personal-formal.svg`} target="_blank" rel="noreferrer" className="col-span-2 block rounded-2xl overflow-hidden group" style={{ border: '1px solid rgba(255,255,255,0.08)' }}>
+                <img src={`${BASE_URL}personal-formal.svg`} alt="Mohamed Ebrahim formal portrait" className="w-full h-72 sm:h-80 object-cover transition-transform duration-500 group-hover:scale-[1.02]" loading="lazy" />
+              </a>
+            </div>
             <div className="rounded-2xl overflow-hidden relative" style={{ border: '1px solid rgba(255,255,255,0.08)', background: 'rgba(255,255,255,0.02)' }}>
               <div className="absolute inset-0 grid-bg opacity-30" />
               <div className="relative z-10 p-5 sm:p-8">
