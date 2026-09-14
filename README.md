@@ -8,22 +8,21 @@
 
 ## Overview
 
-This repository contains the source code for my responsive portfolio website. It presents my projects, technical skills, education, experience, certifications, and contact information in a clean, performance-focused interface.
-
-The portfolio is designed for **recruiters, internship opportunities, and freelance clients** who want to quickly understand what I build and how I work.
+A responsive React portfolio showcasing my work across **Data Analytics, Machine Learning, Generative AI, Computer Vision, and Data Engineering**. The site is built for recruiters, internship opportunities, and freelance clients who need a fast overview of my skills and real projects.
 
 ## Highlights
 
 - Modern responsive React portfolio
-- Data Analytics, ML, GenAI, and Data Engineering positioning
-- Featured projects connected directly to GitHub repositories
+- Professional Data Analyst & ML Engineer positioning
+- Real GitHub projects with direct repository links
 - Project categories and technology tags
-- Dedicated CV, About, Projects, and Certificates sections
-- Responsive navigation with mobile menu
-- Lightweight animations with Framer Motion
+- Project thumbnails stored in `public/projects/`
+- Dedicated Home, About, Projects, CV, and Certificates sections
+- Responsive mobile navigation
+- Lightweight Framer Motion animations
 - GitHub Pages deployment through GitHub Actions
-- Vite production build with the correct `/My_Portfolio/` base path
-- Startup and runtime handling designed to avoid a permanent loading/blank screen
+- Correct Vite `/My_Portfolio/` base path
+- Non-blocking startup and runtime recovery handling
 
 ## Featured Projects
 
@@ -34,12 +33,9 @@ The portfolio is designed for **recruiters, internship opportunities, and freela
 | [Fruit Classification & Quality System](https://github.com/mhmd-ebrahim-1/fruit-classification) | Computer Vision | YOLOv8, PyTorch, OpenCV, Flask, Flutter, Arduino |
 | [Healthcare Analytics](https://github.com/mhmd-ebrahim-1/Healthcare-Analytics) | Data Analytics & BI | Python, SQL, Pandas, PostgreSQL, Power BI |
 
-Additional projects are available in the portfolio's Projects section.
-
 ## Tech Stack
 
 ### Frontend
-
 - React 18
 - Vite 5
 - Tailwind CSS 3
@@ -48,7 +44,6 @@ Additional projects are available in the portfolio's Projects section.
 - Lucide React
 
 ### Data & AI
-
 - Python
 - Pandas / NumPy
 - SQL
@@ -68,31 +63,20 @@ Additional projects are available in the portfolio's Projects section.
 
 ```text
 My_Portfolio/
-├── .github/
-│   └── workflows/
-│       └── deploy.yml          # GitHub Pages CI/CD
+├── .github/workflows/deploy.yml   # GitHub Pages CI/CD
 ├── public/
-│   ├── cv.pdf                  # Downloadable CV
-│   ├── profile.jpg             # Profile image
-│   └── projects/               # Project artwork / thumbnails
+│   ├── cv.pdf                     # Downloadable CV
+│   ├── profile.jpg                # Profile photo
+│   └── projects/                  # Project thumbnails
 ├── src/
-│   ├── components/             # Shared UI components
-│   │   ├── Cursor.jsx
-│   │   ├── Loader.jsx
-│   │   └── Navbar.jsx
-│   ├── data/
-│   │   └── index.js            # Portfolio content/data
-│   ├── hooks/
-│   │   └── index.js            # Reusable React hooks
-│   ├── pages/
-│   │   ├── Home.jsx
-│   │   ├── About.jsx
-│   │   ├── Projects.jsx
-│   │   ├── CV.jsx
-│   │   └── Certificates.jsx
-│   ├── App.jsx                  # App shell + routing
-│   ├── index.css                # Global styles
-│   └── main.jsx                 # React entry point
+│   ├── components/                # Shared UI
+│   ├── config/contact.js          # Central contact email
+│   ├── data/index.js              # Portfolio content
+│   ├── hooks/index.js             # Reusable hooks
+│   ├── pages/                     # Portfolio pages
+│   ├── App.jsx                    # App shell + routing
+│   ├── index.css                  # Global styles
+│   └── main.jsx                   # React entry point
 ├── index.html
 ├── package.json
 ├── tailwind.config.js
@@ -113,16 +97,10 @@ My_Portfolio/
 npm install
 ```
 
-### Start development server
+### Start
 
 ```bash
 npm run dev
-```
-
-Open the local URL shown by Vite, usually:
-
-```text
-http://localhost:5173/
 ```
 
 ### Production build
@@ -137,68 +115,63 @@ npm run build
 npm run preview
 ```
 
-## Deployment
+## GitHub Pages Deployment
 
-The portfolio is configured for GitHub Pages at:
+Live site:
 
 **https://mhmd-ebrahim-1.github.io/My_Portfolio/**
 
-Every push to `main` triggers the GitHub Actions deployment workflow. The workflow installs dependencies, builds the Vite application, and publishes the generated `dist` directory to the `gh-pages` branch.
+Every push to `main` triggers the deployment workflow. It installs dependencies, runs the Vite production build, and publishes `dist` to `gh-pages`.
 
-Manual deployment is also available:
+Manual deployment:
 
 ```bash
 npm run deploy
 ```
 
-The Vite configuration uses:
+The Vite base path is:
 
 ```js
 base: '/My_Portfolio/'
 ```
 
-so assets and routes resolve correctly under the GitHub Pages project path.
-
 ## Content Management
 
-Most portfolio content is centralized in:
+Main portfolio data:
 
 ```text
 src/data/index.js
 ```
 
-Update that file when changing:
-
-- Profile information
-- Skills and tools
-- Projects and GitHub links
-- Experience
-- Education
-- Certificates
-
-Update these files when needed:
+Contact email:
 
 ```text
-public/cv.pdf       # New CV
-public/profile.jpg  # New profile photo
+src/config/contact.js
+```
+
+Assets:
+
+```text
+public/profile.jpg  # Profile photo
+public/cv.pdf       # CV
 public/projects/    # Project thumbnails
 ```
 
+The current portfolio contact email is:
+
+**mhmd_ebrahim_1@outlook.com**
+
 ## Design Principles
 
-The UI intentionally follows a simple hierarchy:
-
-1. **Who I am** — clear professional positioning
-2. **What I do** — Data Analytics, ML, GenAI, and Data Engineering
-3. **What I built** — real projects with GitHub links
-4. **What I know** — focused skills and tools
-5. **How to contact me** — CV, GitHub, LinkedIn, and email
-
-Animations and visual effects are kept subtle so they do not interfere with usability or page loading.
+1. **Clear positioning** — Data Analyst & ML Engineer
+2. **Real work first** — projects and GitHub repositories
+3. **Readable UI** — strong hierarchy and concise content
+4. **Performance** — no blocking loaders or unnecessary effects
+5. **Responsive** — desktop, tablet, and mobile support
 
 ## Contact
 
-- **Email:** mohammedebrahim1177@gmail.com
+- **Email:** mhmd_ebrahim_1@outlook.com
 - **GitHub:** https://github.com/mhmd-ebrahim-1
 - **LinkedIn:** https://www.linkedin.com/in/mhmd-ebrahim1/
 - **Portfolio:** https://mhmd-ebrahim-1.github.io/My_Portfolio/
