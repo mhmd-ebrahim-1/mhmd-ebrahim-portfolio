@@ -66,7 +66,7 @@ export default function App() {
   const [loading, setLoading] = useState(true)
 
   return (
-    <BrowserRouter basename="/My_Portfolio">
+    <BrowserRouter basename="/mhmd-ebrahim-portfolio">
       <Cursor />
       <div className="noise" />
       <Navbar />
