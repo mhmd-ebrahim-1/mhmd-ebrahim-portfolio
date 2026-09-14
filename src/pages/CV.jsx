@@ -49,7 +49,7 @@ export default function CV() {
           <div className="p-5 sm:p-10 pb-8" style={{ borderBottom: '1px solid rgba(255,255,255,0.06)', background: 'rgba(0,245,212,0.02)' }}>
             <div className="flex flex-col sm:flex-row items-start gap-5 sm:gap-6">
               <div className="w-20 h-20 rounded-2xl overflow-hidden flex-shrink-0" style={{ border: '2px solid rgba(0,245,212,0.2)' }}>
-                <img src={`${BASE_URL}profile.jpg`} alt={PROFILE.name} className="w-full h-full object-cover object-top" onError={e => { e.currentTarget.style.display = 'none' }} />
+                <img src={`${BASE_URL}gallery/professional-portrait.webp`} alt={PROFILE.name} className="w-full h-full object-cover object-top" onError={e => { e.currentTarget.style.display = 'none' }} />
               </div>
               <div className="flex-1 min-w-0">
                 <h2 className="font-display text-2xl sm:text-3xl font-bold text-white mb-1">{PROFILE.fullName}</h2>
