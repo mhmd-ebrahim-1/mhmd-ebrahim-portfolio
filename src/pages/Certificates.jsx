@@ -1,14 +1,44 @@
 import { useState } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
-import { Award, Star, BookOpen, ChevronDown, ChevronUp } from 'lucide-react'
+import { Award, Star, BookOpen, ChevronDown, ChevronUp, Images, X } from 'lucide-react'
 import { useReveal } from '../hooks'
 import { CERTIFICATES } from '../data'
+
+const BASE_URL = import.meta.env.BASE_URL
 
 const TIER_CONFIG = {
   top: { label: 'Core Certifications', color: '#00f5d4', icon: Star, bg: 'rgba(0,245,212,0.08)', border: 'rgba(0,245,212,0.2)' },
   important: { label: 'Professional & Technical', color: '#0ea5e9', icon: Award, bg: 'rgba(14,165,233,0.08)', border: 'rgba(14,165,233,0.2)' },
   standard: { label: 'Additional Learning', color: '#a78bfa', icon: BookOpen, bg: 'rgba(167,139,250,0.08)', border: 'rgba(167,139,250,0.2)' },
   learning: { label: 'Learning Activities', color: '#fb923c', icon: BookOpen, bg: 'rgba(251,146,60,0.08)', border: 'rgba(251,146,60,0.2)' },
+}
+
+function CertificateGallery() {
+  const [open, setOpen] = useState(false)
+  return (
+    <section className="mb-14">
+      <div className="flex items-end justify-between gap-4 mb-5">
+        <div>
+          <p className="font-mono text-xs mb-2 tracking-[0.12em]" style={{ color: '#0ea5e9' }}>// VISUAL PROOF</p>
+          <h2 className="font-display text-2xl sm:text-3xl font-bold text-white">Selected Credentials</h2>
+          <p className="text-sm mt-2" style={{ color: 'rgba(255,255,255,0.38)' }}>A visual selection of the strongest certificates in the portfolio.</p>
+        </div>
+        <button onClick={() => setOpen(true)} className="hidden sm:inline-flex btn-ghost items-center gap-2 text-xs"><Images size={14} /> View full gallery</button>
+      </div>
+      <button onClick={() => setOpen(true)} className="block w-full rounded-2xl overflow-hidden group text-left" style={{ border: '1px solid rgba(255,255,255,0.08)', background: 'rgba(255,255,255,0.02)' }} aria-label="Open selected certificates gallery">
+        <img src={`${BASE_URL}gallery/certificates-selected.webp`} alt="Selected certificates including data analytics, NVIDIA, Quantium, Huawei and Kaggle credentials" className="w-full h-auto transition-transform duration-500 group-hover:scale-[1.01]" loading="lazy" decoding="async" />
+        <span className="sm:hidden block px-4 py-3 font-mono text-xs" style={{ color: '#0ea5e9' }}>Tap to view gallery</span>
+      </button>
+      <AnimatePresence>
+        {open && <motion.div className="fixed inset-0 z-[100] bg-black/90 backdrop-blur-md p-4 sm:p-8 flex items-center justify-center" initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }} onClick={() => setOpen(false)}>
+          <motion.div className="relative max-w-5xl w-full max-h-[92vh] rounded-2xl overflow-auto" initial={{ scale: .96, y: 12 }} animate={{ scale: 1, y: 0 }} exit={{ scale: .96, y: 12 }} onClick={e => e.stopPropagation()} style={{ border: '1px solid rgba(255,255,255,.12)', background: '#080810' }}>
+            <button onClick={() => setOpen(false)} aria-label="Close gallery" className="sticky top-3 float-right mr-3 mt-3 z-10 w-10 h-10 rounded-xl flex items-center justify-center" style={{ background: 'rgba(8,8,16,.85)', border: '1px solid rgba(255,255,255,.12)', color: 'white' }}><X size={18} /></button>
+            <img src={`${BASE_URL}gallery/certificates-selected.webp`} alt="Selected certificates gallery" className="w-full h-auto" />
+          </motion.div>
+        </motion.div>}
+      </AnimatePresence>
+    </section>
+  )
 }
 
 function CertCard({ cert, index }) {
@@ -63,6 +93,7 @@ export default function Certificates() {
           <p className="text-base max-w-2xl" style={{ color: 'rgba(255,255,255,0.4)' }}>A curated collection of certificates and learning achievements across data analytics, machine learning, Generative AI, and software development.</p>
           <div className="flex flex-wrap gap-3 mt-8">{visibleGroups.map(({ tier, certs }) => { const config = TIER_CONFIG[tier]; return <div key={tier} className="px-4 py-3 rounded-xl glass" style={{ border: `1px solid ${config.color}20` }}><p className="font-display font-bold text-2xl" style={{ color: config.color }}>{certs.length}</p><p className="font-mono text-xs" style={{ color: 'rgba(255,255,255,0.35)' }}>{config.label}</p></div> })}</div>
         </motion.div>
+        <CertificateGallery />
         {groups.map(({ tier, certs }) => <CertSection key={tier} tier={tier} certs={certs} />)}
       </div>
     </div>
