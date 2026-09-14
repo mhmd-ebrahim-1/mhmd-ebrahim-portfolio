@@ -22,6 +22,7 @@ A responsive React portfolio showcasing my work across **Data Analytics, Machine
 - Lightweight Framer Motion animations
 - GitHub Pages deployment through GitHub Actions
 - Correct Vite `/My_Portfolio/` base path
+- Updated CV PDF served from `public/My_Cv_Update.pdf`
 - Non-blocking startup and runtime recovery handling
 
 ## Featured Projects
@@ -65,8 +66,9 @@ A responsive React portfolio showcasing my work across **Data Analytics, Machine
 My_Portfolio/
 ├── .github/workflows/deploy.yml   # GitHub Pages CI/CD
 ├── public/
-│   ├── cv.pdf                     # Downloadable CV
+│   ├── My_Cv_Update.pdf           # Current downloadable CV
 │   ├── profile.jpg                # Profile photo
+│   ├── gallery/                   # Personal photo assets
 │   └── projects/                  # Project thumbnails
 ├── src/
 │   ├── components/                # Shared UI
@@ -121,7 +123,7 @@ Live site:
 
 **https://mhmd-ebrahim-1.github.io/My_Portfolio/**
 
-Every push to `main` triggers the deployment workflow. It installs dependencies, runs the Vite production build, and publishes `dist` to `gh-pages`.
+Every push to `main` triggers the deployment workflow. It installs dependencies, runs the Vite production build, and publishes the production site to GitHub Pages.
 
 Manual deployment:
 
@@ -152,9 +154,10 @@ src/config/contact.js
 Assets:
 
 ```text
-public/profile.jpg  # Profile photo
-public/cv.pdf       # CV
-public/projects/    # Project thumbnails
+public/profile.jpg             # Profile photo
+public/gallery/                # Personal gallery assets
+public/My_Cv_Update.pdf       # Current CV
+public/projects/               # Project thumbnails
 ```
 
 The current portfolio contact email is:
