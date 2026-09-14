@@ -4,11 +4,11 @@ export const PROFILE = {
   fullName: "Mohamed Ebrahim Hamed",
   title: "Data Analyst & ML Engineer",
   roles: ["Data Analyst", "ML Engineer", "AI Engineer", "GenAI Developer"],
-  email: "mohammedebrahim1177@gmail.com",
-  location: "Egypt",
+  email: "mhmd_ebrahim_1@outlook.com",
+  location: "Mansoura, Egypt",
   university: "Kafr El-Sheikh University",
   degree: "B.Sc. Artificial Intelligence",
-  bio: `AI and Data Science student with hands-on experience in machine learning, NLP, RAG systems, data analytics, and interactive BI. I build end-to-end solutions that turn data into useful decisions and practical AI applications.`,
+  bio: `AI and Data Science undergraduate with hands-on experience in machine learning, NLP, RAG systems, data analytics, and interactive BI. I build end-to-end solutions that turn data into useful decisions and practical AI applications.`,
   bio2: `My strongest work spans Arabic RAG, Big Data pipelines, computer vision, healthcare analytics, and Power BI dashboards. I am focused on Data Analysis, Machine Learning, and AI opportunities.`,
   github: "https://github.com/mhmd-ebrahim-1",
   linkedin: "https://www.linkedin.com/in/mhmd-ebrahim1/",
@@ -269,13 +269,29 @@ export const EDUCATION = [
 export const LEARNING_ACTIVITIES = [];
 
 export const CERTIFICATES = [
-  { id: 1, name: "HCIA-AI V3.5 Course", issuer: "Huawei ICT Academy", date: "Sep 2024", expires: "Sep 2034", skills: ["Machine Learning", "Deep Learning", "AI Systems"], tier: "top", color: "#ea3223" },
-  { id: 2, name: "Getting Started with Deep Learning", issuer: "NVIDIA", date: "Jan 2025", skills: ["Deep Learning", "Neural Networks"], tier: "top", color: "#76b900" },
-  { id: 3, name: "Building LLM Applications with Prompt Engineering", issuer: "NVIDIA", date: "Jan 2025", skills: ["LLMs", "Prompt Engineering", "GenAI"], tier: "top", color: "#76b900" },
-  { id: 4, name: "Data Analytics Job Simulation", issuer: "Quantium", date: "Dec 2025", skills: ["Data Analytics", "Business Intelligence"], tier: "top", color: "#3277b9" },
-  { id: 5, name: "Artificial Intelligence Fundamentals", issuer: "IBM", date: "Sep 2025", skills: ["AI Fundamentals"], tier: "top", color: "#0065bd" },
-  { id: 6, name: "AI for All: From Basics to GenAI Practice", issuer: "NVIDIA", date: "Nov 2025", skills: ["GenAI", "AI Foundations"], tier: "top", color: "#76b900" },
-  { id: 7, name: "Introduction to AI & Generative AI", issuer: "STARKS CAMP", date: "2025", skills: ["AI", "Generative AI"], tier: "standard", color: "#00f5d4" },
-  { id: 8, name: "SQL (Basic)", issuer: "HackerRank", date: "2025", skills: ["SQL"], tier: "standard", color: "#00f5d4" },
-  { id: 9, name: "Introduction to Python", issuer: "HackerRank", date: "2025", skills: ["Python"], tier: "standard", color: "#00f5d4" },
+  // Core credentials: strongest alignment with Data Analytics, ML, and GenAI positioning.
+  { id: 1, name: "Advanced Data Analytics", issuer: "NTI / ITIDA", date: "Jun–Jul 2025", detail: "120 hours · score 93.3%", skills: ["Data Analytics", "Python", "SQL", "Machine Learning"], tier: "top", color: "#e31e24" },
+  { id: 2, name: "Data Analytics Job Simulation", issuer: "Quantium / Forage", date: "Dec 2025", skills: ["Data Analytics", "Customer Analytics", "Experimentation"], tier: "top", color: "#111111" },
+  { id: 3, name: "NVIDIA DLI Summer Training Program: Generative AI (Beginner Level)", issuer: "ITI / NVIDIA DLI", date: "Nov–Dec 2025", detail: "35 hours", skills: ["Generative AI", "LLMs", "Prompt Engineering", "RAG"], tier: "top", color: "#76b900" },
+  { id: 4, name: "HCIA-AI V3.5 Course", issuer: "Huawei ICT Academy-Egypt", date: "Sep 2024", expires: "Sep 2034", credentialId: "EBG20240923004426", skills: ["AI", "Machine Learning", "Deep Learning"], tier: "top", color: "#ea3223" },
+  { id: 5, name: "Getting Started with Deep Learning", issuer: "NVIDIA", date: "Dec 2025", credentialId: "Le-drRAIRdUMwXFUtwcXeQ", skills: ["Deep Learning", "Neural Networks"], tier: "top", color: "#76b900" },
+  { id: 6, name: "Building LLM Applications with Prompt Engineering", issuer: "NVIDIA", date: "Nov–Dec 2025", skills: ["LLMs", "Prompt Engineering", "GenAI"], tier: "top", color: "#76b900" },
+
+  // Professional / supporting credentials: useful, but secondary to the core set above.
+  { id: 7, name: "Introduction to AI & Generative AI", issuer: "Microsoft Egypt / Tawar", date: "Oct 2025", skills: ["AI", "Generative AI"], tier: "important", color: "#0067b8" },
+  { id: 8, name: "Intro to Machine Learning", issuer: "Kaggle", date: "Sep 2025", skills: ["Machine Learning"], tier: "important", color: "#20beff" },
+  { id: 9, name: "Introduction to Deep Learning", issuer: "MaharaTech / ITI", date: "Jan 2026", detail: "6h 26m", credentialId: "0OrwSrdCbs", skills: ["Deep Learning"], tier: "important", color: "#b51f2b" },
+  { id: 10, name: "ITIDA Gigs — Freelance Training Program", issuer: "ITIDA / ITIDA Gigs", date: "2025", detail: "3-month freelance training", skills: ["Freelancing", "Client Communication", "Professional Skills"], tier: "important", color: "#0085b7" },
+  { id: 11, name: "Overview of AI", issuer: "Huawei ICT Academy", date: "Sep 2024", expires: "Sep 2034", credentialId: "ICT20240916003688", skills: ["AI Fundamentals"], tier: "important", color: "#e91d2d" },
+  { id: 12, name: "Python Programming Basics", issuer: "MaharaTech / ITI", date: "Sep 2024", credentialId: "N5xhBCJbJE", skills: ["Python"], tier: "important", color: "#b51f2b" },
+  { id: 13, name: "Python (Basic)", issuer: "HackerRank", date: "Mar 2025", credentialId: "0A9E2E57DEC0", skills: ["Python"], tier: "important", color: "#00a878" },
+
+  // Additional learning records from the LinkedIn profile and supplied certificates.
+  { id: 14, name: "Introduction to Python", issuer: "DataCamp", date: "Jan 2025", skills: ["Python"], tier: "standard", color: "#03ef62" },
+  { id: 15, name: "Database Fundamentals", issuer: "MaharaTech - ITIMooca", date: "Nov 2024", skills: ["Databases", "SQL"], tier: "standard", color: "#b51f2b" },
+  { id: 16, name: "101 Foundations of English", issuer: "The American University in Cairo", date: "Sep 2024", skills: ["English"], tier: "standard", color: "#5ea9c6" },
+  { id: 17, name: "STARKS CAMP", issuer: "STARKS MU", date: "Sep 2024", expires: "Sep 2034", skills: ["Artificial Intelligence", "AI Development"], tier: "standard", color: "#f1c40f" },
+  { id: 18, name: "Robotics Course — Level One", issuer: "Simple Steps Academy", date: "Dec 2023", skills: ["Robotics", "Arduino", "AI"], tier: "standard", color: "#d44755" },
+  { id: 19, name: "IOT Training", issuer: "Creativa Innovation Hub - Mansoura", date: "Dec 2023", skills: ["IoT"], tier: "standard", color: "#1f6fb2" },
+  { id: 20, name: "Python Course [Arabic]", issuer: "Udemy", date: "May 2024", expires: "May 2034", credentialId: "UC-802ab4be-0b3e-4b77-abb0-0e06558e8e31", skills: ["Python"], tier: "standard", color: "#a435f0" },
 ];
