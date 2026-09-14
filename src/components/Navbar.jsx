@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react'
 import { Link, useLocation } from 'react-router-dom'
 import { motion, AnimatePresence } from 'framer-motion'
 import { Menu, X, ArrowUpRight } from 'lucide-react'
+import { PROFILE } from '../data'
 
 const LINKS = [
   { path: '/', label: 'Home' },
@@ -31,7 +32,7 @@ export default function Navbar() {
           <Link to="/" className="flex items-center gap-3 group shrink-0">
             <div className="w-10 h-10 rounded-xl flex items-center justify-center font-display font-bold text-sm transition-transform group-hover:scale-105" style={{ background:'linear-gradient(145deg,rgba(0,245,212,.14),rgba(14,165,233,.08))', border:'1px solid rgba(0,245,212,.2)', color:'#00f5d4' }}>ME</div>
             <div className="hidden sm:block">
-              <p className="font-display font-semibold text-sm text-white">Mohamed Ebrahim</p>
+              <p className="font-display font-semibold text-sm text-white">{PROFILE.name}</p>
               <p className="font-mono text-[9px] tracking-wider" style={{ color:'rgba(255,255,255,.3)' }}>DATA · ML · AI</p>
             </div>
           </Link>
@@ -47,7 +48,7 @@ export default function Navbar() {
           </div>
 
           <div className="flex items-center gap-2">
-            <a href="mailto:mohammedebrahim1177@gmail.com" className="hidden sm:inline-flex items-center gap-2 px-4 py-2.5 rounded-xl text-sm font-semibold" style={{ background:'linear-gradient(135deg,#00f5d4,#0ea5e9)', color:'#080810' }}>Hire Me <ArrowUpRight size={14} /></a>
+            <a href={`mailto:${PROFILE.email}`} className="hidden sm:inline-flex items-center gap-2 px-4 py-2.5 rounded-xl text-sm font-semibold" style={{ background:'linear-gradient(135deg,#00f5d4,#0ea5e9)', color:'#080810' }}>Hire Me <ArrowUpRight size={14} /></a>
             <button aria-label="Toggle navigation" onClick={() => setMenuOpen(v => !v)} className="md:hidden w-10 h-10 rounded-xl flex items-center justify-center" style={{ background:'rgba(255,255,255,.05)', border:'1px solid rgba(255,255,255,.08)', color:'#fff' }}>{menuOpen ? <X size={19} /> : <Menu size={19} />}</button>
           </div>
         </div>
@@ -56,7 +57,7 @@ export default function Navbar() {
       <AnimatePresence>
         {menuOpen && <motion.div initial={{ opacity:0, y:-10 }} animate={{ opacity:1, y:0 }} exit={{ opacity:0, y:-10 }} className="fixed top-[78px] left-4 right-4 z-40 md:hidden glass rounded-2xl p-3" style={{ background:'rgba(8,8,16,.96)' }}>
           {LINKS.map(link => <Link key={link.path} to={link.path} className="flex items-center justify-between px-4 py-3 rounded-xl" style={{ color:location.pathname===link.path?'#00f5d4':'rgba(255,255,255,.7)', background:location.pathname===link.path?'rgba(0,245,212,.06)':'transparent' }}>{link.label}<ArrowUpRight size={14} /></Link>)}
-          <a href="mailto:mohammedebrahim1177@gmail.com" className="mt-2 flex items-center justify-center px-4 py-3 rounded-xl font-semibold" style={{ background:'linear-gradient(135deg,#00f5d4,#0ea5e9)', color:'#080810' }}>Hire Me</a>
+          <a href={`mailto:${PROFILE.email}`} className="mt-2 flex items-center justify-center px-4 py-3 rounded-xl font-semibold" style={{ background:'linear-gradient(135deg,#00f5d4,#0ea5e9)', color:'#080810' }}>Hire Me</a>
         </motion.div>}
       </AnimatePresence>
     </>
