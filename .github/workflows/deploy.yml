@@ -28,4 +28,8 @@ jobs:
         run: npm run build
 
       - name: Publish to GitHub Pages
-        run: npx gh-pages -d dist
+        uses: peaceiris/actions-gh-pages@v4
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_branch: gh-pages
+          publish_dir: ./dist
