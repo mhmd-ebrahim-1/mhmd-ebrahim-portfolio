@@ -5,52 +5,49 @@ export default function Cursor() {
   const ringRef = useRef(null)
 
   useEffect(() => {
-    let mouseX = 0, mouseY = 0
-    let ringX = 0, ringY = 0
+    if (window.matchMedia('(pointer: coarse)').matches) return undefined
+
+    let mouseX = window.innerWidth / 2
+    let mouseY = window.innerHeight / 2
+    let ringX = mouseX
+    let ringY = mouseY
+    let frameId
 
     const moveCursor = (e) => {
       mouseX = e.clientX
       mouseY = e.clientY
       if (dotRef.current) {
-        dotRef.current.style.left = mouseX - 3 + 'px'
-        dotRef.current.style.top = mouseY - 3 + 'px'
+        dotRef.current.style.transform = `translate3d(${mouseX - 3}px, ${mouseY - 3}px, 0)`
       }
     }
 
     const animate = () => {
-      ringX += (mouseX - ringX) * 0.12
-      ringY += (mouseY - ringY) * 0.12
+      ringX += (mouseX - ringX) * 0.16
+      ringY += (mouseY - ringY) * 0.16
       if (ringRef.current) {
-        ringRef.current.style.left = ringX - 16 + 'px'
-        ringRef.current.style.top = ringY - 16 + 'px'
+        ringRef.current.style.transform = `translate3d(${ringX - 16}px, ${ringY - 16}px, 0)`
       }
-      requestAnimationFrame(animate)
+      frameId = requestAnimationFrame(animate)
     }
 
-    const onEnterLink = () => {
-      if (ringRef.current) {
-        ringRef.current.style.width = '50px'
-        ringRef.current.style.height = '50px'
-        ringRef.current.style.borderColor = 'rgba(0,245,212,0.7)'
-      }
-    }
+    const onEnterLink = () => ringRef.current?.classList.add('cursor-hover')
+    const onLeaveLink = () => ringRef.current?.classList.remove('cursor-hover')
 
-    const onLeaveLink = () => {
-      if (ringRef.current) {
-        ringRef.current.style.width = '32px'
-        ringRef.current.style.height = '32px'
-        ringRef.current.style.borderColor = 'rgba(0,245,212,0.4)'
-      }
-    }
-
-    window.addEventListener('mousemove', moveCursor)
+    window.addEventListener('mousemove', moveCursor, { passive: true })
     document.querySelectorAll('a, button').forEach(el => {
       el.addEventListener('mouseenter', onEnterLink)
       el.addEventListener('mouseleave', onLeaveLink)
     })
-
     animate()
-    return () => window.removeEventListener('mousemove', moveCursor)
+
+    return () => {
+      window.removeEventListener('mousemove', moveCursor)
+      cancelAnimationFrame(frameId)
+      document.querySelectorAll('a, button').forEach(el => {
+        el.removeEventListener('mouseenter', onEnterLink)
+        el.removeEventListener('mouseleave', onLeaveLink)
+      })
+    }
   }, [])
 
   return (
