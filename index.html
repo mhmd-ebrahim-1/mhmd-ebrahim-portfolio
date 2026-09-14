@@ -25,6 +25,13 @@
 </head>
 <body>
   <div id="root"></div>
+  <script>
+    const redirect = new URLSearchParams(window.location.search).get('redirect')
+    if (redirect) {
+      const route = decodeURIComponent(redirect)
+      window.history.replaceState(null, '', `/My_Portfolio${route.startsWith('/') ? route : `/${route}`}`)
+    }
+  </script>
   <script type="module" src="/src/main.jsx"></script>
 </body>
 </html>
