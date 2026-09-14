@@ -52,8 +52,8 @@ export default function About() {
 
           <motion.div initial={{ opacity: 0, x: 30 }} animate={heroVisible ? { opacity: 1, x: 0 } : {}} transition={{ duration: 0.7, ease: [0.16, 1, 0.3, 1], delay: 0.1 }} className="relative">
             <div className="grid grid-cols-5 gap-3 mb-4">
-              <a href={`${BASE_URL}gallery/personal-gallery.svg`} target="_blank" rel="noreferrer" className="col-span-3 block rounded-2xl overflow-hidden group" style={{ border: '1px solid rgba(255,255,255,0.08)' }}>
-                <img src={`${BASE_URL}gallery/personal-gallery.svg`} alt="Mohamed Ebrahim personal photo" className="w-full h-72 sm:h-80 object-cover transition-transform duration-500 group-hover:scale-[1.02]" loading="lazy" />
+              <a href={`${BASE_URL}gallery/personal-gallery.webp`} target="_blank" rel="noreferrer" className="col-span-3 block rounded-2xl overflow-hidden group" style={{ border: '1px solid rgba(255,255,255,0.08)' }}>
+                <img src={`${BASE_URL}gallery/personal-gallery.webp`} alt="Mohamed Ebrahim personal and formal photos" className="w-full h-72 sm:h-80 object-cover transition-transform duration-500 group-hover:scale-[1.02]" loading="lazy" />
               </a>
               <a href={`${BASE_URL}profile.jpg`} target="_blank" rel="noreferrer" className="col-span-2 block rounded-2xl overflow-hidden group" style={{ border: '1px solid rgba(255,255,255,0.08)' }}>
                 <img src={`${BASE_URL}profile.jpg`} alt="Mohamed Ebrahim professional portrait" className="w-full h-72 sm:h-80 object-cover object-top transition-transform duration-500 group-hover:scale-[1.02]" loading="lazy" />
