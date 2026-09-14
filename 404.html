@@ -3,7 +3,7 @@
 <head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0"><title>Mohamed Ebrahim</title></head>
 <body>
 <script>
-  const base = '/My_Portfolio'
+  const base = '/mhmd-ebrahim-portfolio'
   const path = window.location.pathname
   const route = path.startsWith(base) ? path.slice(base.length) || '/' : '/'
   window.location.replace(`${base}/?redirect=${encodeURIComponent(route + window.location.search + window.location.hash)}`)
