@@ -39,9 +39,23 @@ function ProjectCard({ proj, index }) {
   )
 }
 
+function ProjectGrid({ projects, label }) {
+  if (!projects.length) return null
+  return (
+    <section className="mb-14">
+      {label && <div className="flex items-end justify-between gap-4 mb-6"><div><p className="font-mono text-[10px] tracking-[.14em] mb-2" style={{ color: '#00f5d4' }}>// {label === 'Featured Work' ? 'PRIMARY' : 'ADDITIONAL'}</p><h2 className="font-display text-2xl sm:text-3xl font-bold text-white">{label}</h2></div><span className="font-mono text-xs" style={{ color: 'rgba(255,255,255,.2)' }}>{projects.length} projects</span></div>}
+      <motion.div layout className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-5 sm:gap-6">
+        <AnimatePresence mode="popLayout">{projects.map((proj, i) => <ProjectCard key={proj.id} proj={proj} index={i} />)}</AnimatePresence>
+      </motion.div>
+    </section>
+  )
+}
+
 export default function Projects() {
   const [filter, setFilter] = useState('all')
   const filtered = filter === 'all' ? PROJECTS : PROJECTS.filter(p => p.category === filter)
+  const featured = filtered.filter(p => p.featured)
+  const additional = filtered.filter(p => !p.featured)
 
   return (
     <div className="page-transition min-h-screen pt-24 pb-20 px-4 sm:px-6 lg:px-10">
@@ -49,15 +63,18 @@ export default function Projects() {
         <motion.div initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: .7 }} className="mb-12">
           <p className="font-mono text-xs mb-4 tracking-[.12em]" style={{ color: '#00f5d4' }}>// 04 — PROJECTS</p>
           <h1 className="font-display text-4xl sm:text-6xl font-bold mb-4 tracking-[-.04em]">Selected <span className="grad-text">Work</span></h1>
-          <p className="text-base max-w-2xl" style={{ color: 'rgba(255,255,255,.45)' }}>Real projects across data analytics, machine learning, Generative AI, computer vision, and data engineering — with source code available on GitHub.</p>
+          <p className="text-base max-w-2xl" style={{ color: 'rgba(255,255,255,.45)' }}>A focused selection of real work across data analytics, machine learning, Generative AI, computer vision, and data engineering.</p>
         </motion.div>
-        <div className="flex items-center gap-2 sm:gap-3 mb-10 flex-wrap">
+
+        <div className="flex items-center gap-2 sm:gap-3 mb-12 flex-wrap">
           {FILTERS.map(f => <motion.button key={f.id} onClick={() => setFilter(f.id)} whileHover={{ scale: 1.03 }} whileTap={{ scale: .97 }} className="px-3 sm:px-5 py-2 rounded-xl font-mono text-xs sm:text-sm" style={{ color: filter === f.id ? '#00f5d4' : 'rgba(255,255,255,.4)', background: filter === f.id ? 'rgba(0,245,212,.08)' : 'transparent', border: filter === f.id ? '1px solid rgba(0,245,212,.2)' : '1px solid rgba(255,255,255,.06)' }}>{f.label}</motion.button>)}
           <span className="sm:ml-auto font-mono text-xs" style={{ color: 'rgba(255,255,255,.2)' }}>{filtered.length} projects</span>
         </div>
-        <motion.div layout className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-5 sm:gap-6">
-          <AnimatePresence mode="popLayout">{filtered.map((proj, i) => <ProjectCard key={proj.id} proj={proj} index={i} />)}</AnimatePresence>
-        </motion.div>
+
+        {filter === 'all' ? <>
+          <ProjectGrid projects={featured} label="Featured Work" />
+          <ProjectGrid projects={additional} label="Additional Work" />
+        </> : <ProjectGrid projects={filtered} />}
       </div>
     </div>
   )
