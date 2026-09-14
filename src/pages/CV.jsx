@@ -4,6 +4,7 @@ import { useReveal } from '../hooks'
 import { PROFILE, EXPERIENCE, EDUCATION, LEARNING_ACTIVITIES, SKILLS, TOOLS } from '../data'
 
 const BASE_URL = import.meta.env.BASE_URL
+const CV_FILE = 'My_Cv_Update.pdf'
 
 function TimelineItem({ item, index, isEdu = false }) {
   const [ref, visible] = useReveal()
@@ -39,7 +40,7 @@ export default function CV() {
             <h1 className="font-display text-4xl sm:text-6xl font-bold mb-4 tracking-[-0.04em]">My <span className="grad-text">CV</span></h1>
             <p className="text-base" style={{ color: 'rgba(255,255,255,0.4)' }}>Experience, education, and skills — all in one place.</p>
           </div>
-          <motion.button whileHover={{ scale: 1.04 }} whileTap={{ scale: 0.96 }} onClick={() => window.open(`${BASE_URL}cv.pdf`, '_blank', 'noopener,noreferrer')} className="btn-primary inline-flex items-center gap-2 self-start">
+          <motion.button whileHover={{ scale: 1.04 }} whileTap={{ scale: 0.96 }} onClick={() => window.open(`${BASE_URL}${CV_FILE}`, '_blank', 'noopener,noreferrer')} className="btn-primary inline-flex items-center gap-2 self-start">
             <Download size={16} /> Download PDF
           </motion.button>
         </motion.div>
