@@ -66,7 +66,7 @@ export default function App() {
   const [loading, setLoading] = useState(true)
 
   return (
-    <BrowserRouter>
+    <BrowserRouter basename="/My_Portfolio">
       <Cursor />
       <div className="noise" />
       <Navbar />
