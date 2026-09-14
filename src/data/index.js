@@ -285,13 +285,14 @@ export const CERTIFICATES = [
   { id: 11, name: "Overview of AI", issuer: "Huawei ICT Academy", date: "Sep 2024", expires: "Sep 2034", credentialId: "ICT20240916003688", skills: ["AI Fundamentals"], tier: "important", color: "#e91d2d" },
   { id: 12, name: "Python Programming Basics", issuer: "MaharaTech / ITI", date: "Sep 2024", credentialId: "N5xhBCJbJE", skills: ["Python"], tier: "important", color: "#b51f2b" },
   { id: 13, name: "Python (Basic)", issuer: "HackerRank", date: "Mar 2025", credentialId: "0A9E2E57DEC0", skills: ["Python"], tier: "important", color: "#00a878" },
+  { id: 14, name: "Claude 101", issuer: "Anthropic", date: "2026", skills: ["Claude", "Generative AI", "AI Fluency"], tier: "important", color: "#d97757" },
 
   // Additional learning records from the LinkedIn profile and supplied certificates.
-  { id: 14, name: "Introduction to Python", issuer: "DataCamp", date: "Jan 2025", skills: ["Python"], tier: "standard", color: "#03ef62" },
-  { id: 15, name: "Database Fundamentals", issuer: "MaharaTech - ITIMooca", date: "Nov 2024", skills: ["Databases", "SQL"], tier: "standard", color: "#b51f2b" },
-  { id: 16, name: "101 Foundations of English", issuer: "The American University in Cairo", date: "Sep 2024", skills: ["English"], tier: "standard", color: "#5ea9c6" },
-  { id: 17, name: "STARKS CAMP", issuer: "STARKS MU", date: "Sep 2024", expires: "Sep 2034", skills: ["Artificial Intelligence", "AI Development"], tier: "standard", color: "#f1c40f" },
-  { id: 18, name: "Robotics Course — Level One", issuer: "Simple Steps Academy", date: "Dec 2023", skills: ["Robotics", "Arduino", "AI"], tier: "standard", color: "#d44755" },
-  { id: 19, name: "IOT Training", issuer: "Creativa Innovation Hub - Mansoura", date: "Dec 2023", skills: ["IoT"], tier: "standard", color: "#1f6fb2" },
-  { id: 20, name: "Python Course [Arabic]", issuer: "Udemy", date: "May 2024", expires: "May 2034", credentialId: "UC-802ab4be-0b3e-4b77-abb0-0e06558e8e31", skills: ["Python"], tier: "standard", color: "#a435f0" },
+  { id: 15, name: "Introduction to Python", issuer: "DataCamp", date: "Jan 2025", skills: ["Python"], tier: "standard", color: "#03ef62" },
+  { id: 16, name: "Database Fundamentals", issuer: "MaharaTech - ITIMooca", date: "Nov 2024", skills: ["Databases", "SQL"], tier: "standard", color: "#b51f2b" },
+  { id: 17, name: "101 Foundations of English", issuer: "The American University in Cairo", date: "Sep 2024", skills: ["English"], tier: "standard", color: "#5ea9c6" },
+  { id: 18, name: "STARKS CAMP", issuer: "STARKS MU", date: "Sep 2024", expires: "Sep 2034", skills: ["Artificial Intelligence", "AI Development"], tier: "standard", color: "#f1c40f" },
+  { id: 19, name: "Robotics Course — Level One", issuer: "Simple Steps Academy", date: "Dec 2023", skills: ["Robotics", "Arduino", "AI"], tier: "standard", color: "#d44755" },
+  { id: 20, name: "IOT Training", issuer: "Creativa Innovation Hub - Mansoura", date: "Dec 2023", skills: ["IoT"], tier: "standard", color: "#1f6fb2" },
+  { id: 21, name: "Python Course [Arabic]", issuer: "Udemy", date: "May 2024", expires: "May 2034", credentialId: "UC-802ab4be-0b3e-4b77-abb0-0e06558e8e31", skills: ["Python"], tier: "standard", color: "#a435f0" },
 ];
