@@ -157,6 +157,7 @@ export const SERVICES = [
       "Executive visual summaries in Matplotlib/Seaborn",
     ],
     cta: "Discuss Data Analysis",
+    emailSubject: "Data Analysis Project Inquiry",
   },
   {
     id: "power-bi-dashboards",
@@ -171,6 +172,7 @@ export const SERVICES = [
       "Automated refresh pipelines and user-friendly filters",
     ],
     cta: "Request a Dashboard",
+    emailSubject: "Power BI Dashboard Request",
   },
   {
     id: "sql-database-analysis",
@@ -185,6 +187,7 @@ export const SERVICES = [
       "Relational schema inspection and query tuning",
     ],
     cta: "Discuss Database Project",
+    emailSubject: "SQL & Database Project Inquiry",
   },
   {
     id: "machine-learning-solutions",
@@ -199,6 +202,7 @@ export const SERVICES = [
       "Inference scripts ready for deployment or batch jobs",
     ],
     cta: "Build an ML Model",
+    emailSubject: "Machine Learning Project Inquiry",
   },
   {
     id: "ai-nlp-rag-systems",
@@ -213,6 +217,7 @@ export const SERVICES = [
       "Context-aware question-answering APIs with source attribution",
     ],
     cta: "Discuss AI & RAG",
+    emailSubject: "AI & RAG System Project Inquiry",
   },
   {
     id: "computer-vision",
@@ -227,6 +232,7 @@ export const SERVICES = [
       "REST API integration for image inference",
     ],
     cta: "Discuss Vision System",
+    emailSubject: "Computer Vision Project Inquiry",
   },
   {
     id: "data-engineering-big-data",
@@ -241,6 +247,7 @@ export const SERVICES = [
       "Docker Compose multi-container pipeline environments",
     ],
     cta: "Discuss Data Engineering",
+    emailSubject: "Data Engineering & Pipeline Inquiry",
   },
 ];
 

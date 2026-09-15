@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react'
-import { Link, useLocation, useNavigate } from 'react-router-dom'
+import { Link, useLocation } from 'react-router-dom'
 import { motion, AnimatePresence } from 'framer-motion'
 import { Menu, X, ArrowUpRight } from 'lucide-react'
 import { PROFILE } from '../data'
@@ -8,14 +8,13 @@ const LINKS = [
   { path: '/', label: 'Home' },
   { path: '/about', label: 'About' },
   { path: '/projects', label: 'Projects' },
-  { path: '/#services', label: 'Services', isHash: true },
+  { path: '/services', label: 'Services' },
   { path: '/cv', label: 'CV' },
   { path: '/certificates', label: 'Certificates' },
 ]
 
 export default function Navbar() {
   const location = useLocation()
-  const navigate = useNavigate()
   const [scrolled, setScrolled] = useState(false)
   const [menuOpen, setMenuOpen] = useState(false)
 
@@ -28,23 +27,6 @@ export default function Navbar() {
   useEffect(() => {
     setMenuOpen(false)
   }, [location.pathname, location.hash])
-
-  const handleNavClick = (link, e) => {
-    if (link.isHash) {
-      e.preventDefault()
-      if (location.pathname !== '/') {
-        navigate('/')
-        setTimeout(() => {
-          const el = document.getElementById('services')
-          if (el) el.scrollIntoView({ behavior: 'smooth' })
-        }, 300)
-      } else {
-        const el = document.getElementById('services')
-        if (el) el.scrollIntoView({ behavior: 'smooth' })
-      }
-      setMenuOpen(false)
-    }
-  }
 
   return (
     <>
@@ -82,18 +64,8 @@ export default function Navbar() {
 
           <div className="hidden md:flex items-center gap-1">
             {LINKS.map((link) => {
-              const active = !link.isHash && location.pathname === link.path
-              return link.isHash ? (
-                <a
-                  key={link.label}
-                  href="#services"
-                  onClick={(e) => handleNavClick(link, e)}
-                  className="relative px-3 lg:px-4 py-2 rounded-lg text-sm font-medium transition-colors hover:text-white"
-                  style={{ color: 'rgba(255,255,255,.6)' }}
-                >
-                  {link.label}
-                </a>
-              ) : (
+              const active = location.pathname === link.path
+              return (
                 <Link
                   key={link.path}
                   to={link.path}
@@ -150,33 +122,21 @@ export default function Navbar() {
             className="fixed top-[78px] left-4 right-4 z-40 md:hidden glass rounded-2xl p-3 border shadow-2xl"
             style={{ background: 'rgba(8,8,16,.96)', borderColor: 'rgba(255,255,255,0.1)' }}
           >
-            {LINKS.map((link) =>
-              link.isHash ? (
-                <a
-                  key={link.label}
-                  href="#services"
-                  onClick={(e) => handleNavClick(link, e)}
-                  className="flex items-center justify-between px-4 py-3 rounded-xl text-sm font-medium"
-                  style={{ color: 'rgba(255,255,255,.75)' }}
-                >
-                  {link.label}
-                  <ArrowUpRight size={14} />
-                </a>
-              ) : (
-                <Link
-                  key={link.path}
-                  to={link.path}
-                  className="flex items-center justify-between px-4 py-3 rounded-xl text-sm font-medium"
-                  style={{
-                    color: location.pathname === link.path ? '#00f5d4' : 'rgba(255,255,255,.75)',
-                    background: location.pathname === link.path ? 'rgba(0,245,212,.06)' : 'transparent',
-                  }}
-                >
-                  {link.label}
-                  <ArrowUpRight size={14} />
-                </Link>
-              )
-            )}
+            {LINKS.map((link) => (
+              <Link
+                key={link.path}
+                to={link.path}
+                onClick={() => setMenuOpen(false)}
+                className="flex items-center justify-between px-4 py-3 rounded-xl text-sm font-medium"
+                style={{
+                  color: location.pathname === link.path ? '#00f5d4' : 'rgba(255,255,255,.75)',
+                  background: location.pathname === link.path ? 'rgba(0,245,212,.06)' : 'transparent',
+                }}
+              >
+                {link.label}
+                <ArrowUpRight size={14} />
+              </Link>
+            ))}
             <a
               href={`mailto:${PROFILE.email}?subject=Project%20Inquiry%20-%20Mohamed%20Ebrahim`}
               className="mt-2 flex items-center justify-center px-4 py-3 rounded-xl font-semibold text-sm"

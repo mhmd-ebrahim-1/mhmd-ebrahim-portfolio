@@ -135,9 +135,9 @@ export default function Home() {
               <Link to="/cv" className="btn-ghost inline-flex items-center gap-2">
                 <Download size={15} /> View CV
               </Link>
-              <a href="#services" className="btn-ghost inline-flex items-center gap-2">
-                <Briefcase size={15} /> What I Offer
-              </a>
+              <Link to="/services" className="btn-ghost inline-flex items-center gap-2">
+                <Briefcase size={15} /> Services &amp; Offerings
+              </Link>
             </div>
 
             {/* Social Links & Location */}
@@ -421,21 +421,31 @@ export default function Home() {
       {/* Services Section ("What I Can Help You With") */}
       <section id="services" className="px-4 sm:px-6 lg:px-10 pb-28 pt-8">
         <div className="max-w-7xl mx-auto">
-          <div className="max-w-3xl mb-14">
-            <p className="font-mono text-xs mb-2 tracking-wider uppercase" style={{ color: '#00f5d4' }}>
-              // SERVICES &amp; COLLABORATION
-            </p>
-            <h2 className="font-display text-4xl sm:text-5xl font-bold text-white mb-4">
-              What I Can <span className="grad-text">Help You With</span>
-            </h2>
-            <p className="text-base sm:text-lg leading-relaxed" style={{ color: 'rgba(255,255,255,.6)' }}>
-              Practical, production-grounded technical services tailored for engineering teams, startups, and clients seeking verified data analytics and machine learning capabilities.
-            </p>
+          <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-6 mb-12">
+            <div className="max-w-3xl">
+              <p className="font-mono text-xs mb-2 tracking-wider uppercase" style={{ color: '#00f5d4' }}>
+                // SERVICES &amp; COLLABORATION
+              </p>
+              <h2 className="font-display text-4xl sm:text-5xl font-bold text-white mb-3">
+                What I Can <span className="grad-text">Help You With</span>
+              </h2>
+              <p className="text-base sm:text-lg leading-relaxed" style={{ color: 'rgba(255,255,255,.6)' }}>
+                Practical, production-grounded technical services tailored for engineering teams, startups, and clients seeking verified data analytics and machine learning capabilities.
+              </p>
+            </div>
+            <Link
+              to="/services"
+              className="font-mono text-sm inline-flex items-center gap-2 transition-colors hover:text-cyan-300 shrink-0"
+              style={{ color: '#00f5d4' }}
+            >
+              View Full Services Page <ArrowRight size={14} />
+            </Link>
           </div>
 
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 mb-8">
             {SERVICES.map((service, idx) => {
               const Icon = serviceIconMap[service.icon] || Database
+              const mailSubject = service.emailSubject || `${service.title} Project Inquiry`
               return (
                 <motion.div
                   key={service.id}
@@ -478,7 +488,7 @@ export default function Home() {
                       ))}
                     </div>
                     <a
-                      href={`mailto:${PROFILE.email}?subject=Inquiry:%20${encodeURIComponent(service.title)}`}
+                      href={`mailto:${PROFILE.email}?subject=${encodeURIComponent(mailSubject)}`}
                       className="w-full inline-flex items-center justify-center gap-2 py-3 rounded-xl font-mono text-xs font-semibold glass hover:border-cyan-400/50 transition-all hover:text-white"
                       style={{ color: '#00f5d4', border: '1px solid rgba(0,245,212,0.25)' }}
                     >
@@ -488,6 +498,15 @@ export default function Home() {
                 </motion.div>
               )
             })}
+          </div>
+
+          <div className="text-center pt-4">
+            <Link
+              to="/services"
+              className="btn-ghost inline-flex items-center gap-2 text-sm"
+            >
+              <Briefcase size={15} /> Explore Detailed Services, Offerings &amp; Workflow <ArrowRight size={14} />
+            </Link>
           </div>
         </div>
       </section>

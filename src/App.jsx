@@ -10,6 +10,7 @@ import Home from './pages/Home'
 // Route-level code splitting for enhanced performance
 const About = lazy(() => import('./pages/About'))
 const Projects = lazy(() => import('./pages/Projects'))
+const Services = lazy(() => import('./pages/Services'))
 const CV = lazy(() => import('./pages/CV'))
 const Certificates = lazy(() => import('./pages/Certificates'))
 
@@ -43,6 +44,7 @@ function AnimatedRoutes() {
           <Route path="/" element={<PageWrapper><Home /></PageWrapper>} />
           <Route path="/about" element={<PageWrapper><About /></PageWrapper>} />
           <Route path="/projects" element={<PageWrapper><Projects /></PageWrapper>} />
+          <Route path="/services" element={<PageWrapper><Services /></PageWrapper>} />
           <Route path="/cv" element={<PageWrapper><CV /></PageWrapper>} />
           <Route path="/certificates" element={<PageWrapper><Certificates /></PageWrapper>} />
           <Route path="*" element={<PageWrapper><Home /></PageWrapper>} />
