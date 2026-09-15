@@ -49,7 +49,7 @@ function CertCard({ cert, index }) {
       <div className="flex-1 min-w-0">
         <p className="font-display font-semibold text-white text-sm leading-snug mb-1">{cert.name}</p>
         <p className="font-semibold text-xs mb-1" style={{ color: cert.color }}>{cert.issuer}</p>
-        <p className="font-mono text-xs" style={{ color: 'rgba(255,255,255,0.25)' }}>Issued {cert.date}{cert.expires ? ` · Expires ${cert.expires}` : ''}{cert.detail ? ` · ${cert.detail}` : ''}</p>
+        <p className="font-mono text-xs" style={{ color: 'rgba(255,255,255,0.25)' }}>{cert.date ? `Issued ${cert.date}` : 'Verified Credential'}{cert.expires ? ` · Expires ${cert.expires}` : ''}{cert.detail ? ` · ${cert.detail}` : ''}</p>
         {cert.credentialId && <p className="font-mono text-[10px] mt-1 break-all" style={{ color: 'rgba(255,255,255,0.18)' }}>Credential ID · {cert.credentialId}</p>}
         {cert.skills?.length > 0 && <div className="flex flex-wrap gap-1.5 mt-3">{cert.skills.map(s => <span key={s} className="font-mono text-xs px-2 py-0.5 rounded-md" style={{ background: `${cert.color}0d`, border: `1px solid ${cert.color}25`, color: cert.color }}>{s}</span>)}</div>}
       </div>
